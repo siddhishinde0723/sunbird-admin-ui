@@ -16,12 +16,13 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { MessageService } from 'primeng/api';
 import { DropdownModule } from 'primeng/dropdown';
 import { ChipModule } from 'primeng/chip';
-import { FrameworkComponent } from './framework.component';
-import { FrameworkRoutingModule } from './framework-routing.module';
-import { FrameworkService } from 'src/app/sb-admin/service/framework.service';
+import { BatchupdateComponent } from './batchupdate.component';
+import { BatchupdateRoutingModule } from './batchupdate-routing.module';
+import { InviteonlyService } from 'src/app/sb-admin/service/inviteonly.service';
+// import { FrameworkService } from 'src/app/sb-admin/service/framework.service';
 
 @NgModule({
-	declarations: [FrameworkComponent],
+	declarations: [BatchupdateComponent],
 	imports: [
 		CommonModule,
 		TableModule,
@@ -39,9 +40,9 @@ import { FrameworkService } from 'src/app/sb-admin/service/framework.service';
 		InputTextareaModule,
 		DropdownModule,
 		ChipModule,
-		FrameworkRoutingModule,
+		BatchupdateRoutingModule,
 		I18NextModule.forRoot(),
 	],
-	providers: [DialogService, DynamicDialogRef, MessageService,FrameworkService],
+	providers: [DialogService, DynamicDialogRef, MessageService,InviteonlyService],
 })
-export class FrameworkModule {}
+export class BatchupdateModule {}

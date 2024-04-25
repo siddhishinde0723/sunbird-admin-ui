@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TableModule } from 'primeng/table';
 import { InputTextModule } from 'primeng/inputtext';
@@ -9,19 +9,24 @@ import { ToastModule } from 'primeng/toast';
 import { ToolbarModule } from 'primeng/toolbar';
 import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
-import {DialogService, DynamicDialogModule, DynamicDialogRef} from 'primeng/dynamicdialog';
+import {
+	DialogService,
+	DynamicDialogModule,
+	DynamicDialogRef,
+} from 'primeng/dynamicdialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RippleModule } from 'primeng/ripple';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { MessageService } from 'primeng/api';
 import { DropdownModule } from 'primeng/dropdown';
 import { ChipModule } from 'primeng/chip';
-import { FrameworkComponent } from './framework.component';
-import { FrameworkRoutingModule } from './framework-routing.module';
+import { TermAssociationComponent } from './term-association.component';
+import { TermAssociationRoutingModule } from './term-association-routing.module';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { FrameworkService } from 'src/app/sb-admin/service/framework.service';
-
 @NgModule({
-	declarations: [FrameworkComponent],
+	declarations: [TermAssociationComponent],
 	imports: [
 		CommonModule,
 		TableModule,
@@ -39,9 +44,12 @@ import { FrameworkService } from 'src/app/sb-admin/service/framework.service';
 		InputTextareaModule,
 		DropdownModule,
 		ChipModule,
-		FrameworkRoutingModule,
-		I18NextModule.forRoot(),
+		TermAssociationRoutingModule,
+		I18NextModule,
+		NgMultiSelectDropDownModule,
 	],
 	providers: [DialogService, DynamicDialogRef, MessageService,FrameworkService],
+	schemas: [CUSTOM_ELEMENTS_SCHEMA],
+	
 })
-export class FrameworkModule {}
+export class TermAssociationModule {}
